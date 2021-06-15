@@ -39,7 +39,7 @@ The major reason behind mobilenet being lightweight is the use of depthwise sepe
 
 > In Depthwise Convolutions operations, the first stage (filtering stage) , a Feature map having M input channels and a dimension of Df x Df is acted upon by filters of size Dk x Dk x M. Here each filter acts upon a single input channel, so the size of each filter is Dk x Dk x 1 and since there are M input channels hence the total number of filters are M. Th output of the filtering stage is a feature map of size Dg x Dg x M. The second step evaluate the linear combination of the depthwise layers using pointwise convolution where feature map of size Df x Df x M is acted upon 1 x 1 x M x N convolutionS to produce the output of size  Dg x Dg x N. The overall computations in this layer is Dg x Dg x Dk x Dk x M. For the second layer, matri mul with 1 kernel the operatons no are Dg x Dg x Dk x Dk x M foled bu n different filter , for N input kernels the total copuaions in the second layers are Df x M x Df + Dg x Dg x M x M x M.
 
-##Implementation:
+## Implementation:
 
 * Implemented the mobileNet_v1 ON CIFAR10 dataset which consists of 50,000 training images and 10,000 test images.
 
