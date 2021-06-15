@@ -5,6 +5,7 @@
    $ python3 main.py --epochs 40 --model mobilenetv1
 ```
 ## Test:
+### run this code after training the model, the model will be saved as .h5 file in the directory
 ```py
    $ python3 evaluate.py
 ```   
