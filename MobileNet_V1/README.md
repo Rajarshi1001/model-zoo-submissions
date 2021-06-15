@@ -29,8 +29,8 @@ out of fully factorized convolutions and showed the potential of extremely facto
 The major reason behind mobilenet being lightweight is the use of depthwise seperable convolutions which is divided into two parts, the first part applies a depthwise convolution to the input feature map.The model essentially consists of alternate depthwise and standard convolutions being applied to the input feature map. This decreases the model size and number of parameters. The first part of the depthwise layer filters the input channel and the 1x1 conv operations is use to combine outputs of first layer. Most of the parameters is present in psenet in pointwise convolutions (apprx 75%).
 
 
-![alt text](/home/rajarshi/Desktop/MobileNet_V1/assets/archtecture.png)
-![alt text](/home/rajarshi/Desktop/MobileNet_V1/assets/resource.png)
+![alt text](assets/architecture.png)
+![alt text](assets/resource.png)
 
 
 
