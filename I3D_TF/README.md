@@ -49,7 +49,7 @@ $ python3 evaluate.py --type both --pretrain bothsets
 * Paper_Link: [I3D_Paper on Action Classification](https://arxiv.org/abs/1705.07750)
 * Authors: Joao Carreira, Andrew Zisserman
 * Topic: Action Recognition
-* Year: 2021
+* Year: 2017
 
 ## Contributed by: 
 * [Rajarshi Dutta](https://github.com/Rajarshi1001)
