@@ -92,7 +92,7 @@ The data used is already pre-processed for the model to fit on it.I t has 79 fra
 
 ![alt_text](assets/v_CricketShot_g04_c01_rgb.gif)
 
-### Output of the I3D Model:
+### Output of the I3D Model(using weights trained on both kinetics-400 and Imagenet Datasets):
 
 ![alt_text](assets/output.png)
 
