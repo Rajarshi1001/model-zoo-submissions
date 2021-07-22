@@ -45,8 +45,11 @@ $ python3 evaluate.py --type both --pretrain bothsets
 ```
 ## References:
 
-* Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset [I3D_Paper on Action Classification](https://arxiv.org/abs/1705.07750)
-  Joao Carreira, Andrew Zisserman
+* Title: Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset.
+* Paper_Link: [I3D_Paper on Action Classification](https://arxiv.org/abs/1705.07750)
+* Authors: Joao Carreira, Andrew Zisserman
+* Topic: Action Recognition
+* Year: 2021
 
 ## Contributed by: 
 * [Rajarshi Dutta](https://github.com/Rajarshi1001)
