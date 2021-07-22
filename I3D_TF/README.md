@@ -2,7 +2,7 @@
 
 ### Libraries to be installed via pip3:
 ```py
- $ pip3 install _
+ $ pip3 install *
 ``` 
 * tensorflow
 * numpy
@@ -12,14 +12,14 @@
 
 This model has been pre-trained on both RGB and Optical Flow channels data for Action Classifcation.The I3D-Model has weights already trained on both only kinetics-400 dataset and both kinetics and imagenet datasets.Pass the Arguements in order to train accordingly.
 
-RGB I3D MODEL pre-trained on:
+rgb I3D Model having weights pre-trained on:
 
     Kinetics-400 Dataset only
-    Kinetics-400 and Imagenet Dataset
-OPTICAL_FLOW I3D MODEL pre-trained on:
+    Kinetics-400 and Imagenet Datasets
+Optical_flow I3D Model having weights pre-trained on:
 
     Kinetics-400 Dataset only
-    Kinetics-400 and Imagenet Dataset   
+    Kinetics-400 and Imagenet Datasets   
 
 ### Evaluate the model:
 
@@ -82,13 +82,13 @@ make them cubic – N × N filters become N × N × N.
 ![alt_text](assets/results.png)
 
 ### Results:
-The data used is already pre-processed for the model to fit on it.I t has 79 frames and a dimension of 224x224 pixels.
+The data used has been  -processed for the model to fit on it.The sample video(gif) has 79 frames and has a frame_height and frame_width of 224 pixels.The optical flow version has 2 flow channels and the rgb version has 3 channels.
 
-* OPTICAL_FLOW
+<h3>OPTICAL_FLOW</h3>
 
 ![alt_text](assets/v_CricketShot_g04_c01_flow.gif)
 
-* RGB
+<h3>RGB<h3> 
 
 ![alt_text](assets/v_CricketShot_g04_c01_rgb.gif)
 
@@ -98,7 +98,10 @@ The data used is already pre-processed for the model to fit on it.I t has 79 fra
 
 ## Implementation:
 
-* The model couldn't be trained because of the huge size of the datasets and lack of resources so I have use the weights of the model pre-trained on the kinetics and the imagenet datasets.
+* The Kinetics-400 dataset contains numerous short videos which consists of actions 
+like human-object,human-human interactions like washing dishes, moving lawns, opening presents etc.The datasets consists of 400 classes with each class containing more than 400 videos and the videos lasts for not more than 10s.There are no untrimmed videos in the dataset.The test set consists of 100 clips for each class.
+
+* The model couldn't be trained because of the huge size of the datasets and lack of resources(GPUs) so I have decided to use the weights of the model pre-trained on the kinetics-400 and the imagenet datasets.
 
 
 

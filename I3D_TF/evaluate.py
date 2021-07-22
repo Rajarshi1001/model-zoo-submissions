@@ -9,6 +9,8 @@ parser.add_argument('--pretrain', help='Please specify whether you want to use m
 args = parser.parse_args()
 classes = [ text.strip() for text in open('assets/label_map.txt','r') ]
 
+#Checking whether the user wants to use the RGB or the Optical flow model trained on the kinetics-400 and the Imagenet Datasets.
+
 if args.type == 'rgb':
     im = np.load('assets/v_CricketShot_g04_c01_rgb.npy')
     if args.pretrain == 'kinetics':
@@ -71,6 +73,8 @@ elif args.type == 'both':
     
     logits = rgb_model.predict(im1) + flow_model.predict(im2)
 
+#Evaluation of class-probabilities from the Logits predicted from the Model.
+
 results = [] 
 logits = logits[0] 
 predictions = np.exp(logits) / np.sum(np.exp(logits))
@@ -83,5 +87,7 @@ for index in indices[:20]:
 for output in results:    
     table.add_row(output)
 print(table)    
+
+#prettytable is used in order to tabulate the class-probabilities, classes and the corresponding logits for better visualisation.
     
 

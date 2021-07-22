@@ -14,6 +14,8 @@ from tensorflow.python.keras.utils.data_utils import get_file
 
 WEIGHTS_NAME = ['rgb_kinetics_only', 'flow_kinetics_only', 'rgb_imagenet_and_kinetics', 'flow_imagenet_and_kinetics']
 
+#Path of the weights of the model when trained on the Kinetics-400 and the Imagenet Datasets.
+
 WEIGHTS_PATH = {
     'rgb_kinetics_only' : 'https://github.com/dlpbc/keras-kinetics-i3d/releases/download/v0.2/rgb_inception_i3d_kinetics_only_tf_dim_ordering_tf_kernels.h5',
     'flow_kinetics_only' : 'https://github.com/dlpbc/keras-kinetics-i3d/releases/download/v0.2/flow_inception_i3d_kinetics_only_tf_dim_ordering_tf_kernels.h5',
@@ -26,6 +28,10 @@ WEIGHTS_PATH_NO_TOP = {
     'rgb_imagenet_and_kinetics' : 'https://github.com/dlpbc/keras-kinetics-i3d/releases/download/v0.2/rgb_inception_i3d_imagenet_and_kinetics_tf_dim_ordering_tf_kernels_no_top.h5',
     'flow_imagenet_and_kinetics' : 'https://github.com/dlpbc/keras-kinetics-i3d/releases/download/v0.2/flow_inception_i3d_imagenet_and_kinetics_tf_dim_ordering_tf_kernels_no_top.h5'
 }
+
+#Function caculates the input shape of the tensor to be fed to the model.
+#The input params contains the FRAME_HEIIGHT, FRAME_WIDTH, NUMBER_OF_FRAMES and the NUM_OF_CHANNELS( for RGB ==3)
+#and for Optical Flow the NUM_OF_FLOW_CHANNELS are 2.
 
 def inputdim(input_shape, default_fsize, default_frames, weights = True):
   flatten = True
@@ -47,16 +53,26 @@ def inputdim(input_shape, default_fsize, default_frames, weights = True):
   
   return input_shape    
 
+#Funciton for applying a 3D Convolution Operation along with a BatchNormalization followed by a RELU Activation function.
+
 def conv3d_bn(X,filters, num_frames, num_rows, num_cols, padding='same', strides=(1, 1, 1), use_bias = False):
     
     X = Conv3D(filters, (num_frames, num_rows, num_cols), strides=strides, padding=padding, use_bias=use_bias)(X)
     X = BatchNormalization(axis=4, scale=False)(X)
     X = Activation('relu')(X)
     return X
+#Function for applying a 3D Convolution Operation without BatchNormalization and RELU Activation function.
 
 def conv3d(X,filters, num_frames, num_rows, num_cols, padding='same', strides=(1, 1, 1)):
   X = Conv3D(filters, (num_frames, num_rows, num_cols),strides=strides,padding=padding)(X)
   return X 
+
+#This function contains the entire architecture of the I3D model. It contains the Inception-V1 blocks followd by Maxpooling3D 
+#operation. The inception block creates multiple branches from a particular layer including Pointwise Convolutions.
+#Depthwise Convolutions , Standard Convolutions and then creates a stack of the layers and merges them.This enables the Inception
+#model to act as state-of-the-art Image Classifiers with a reduced nbumber of params than normal Conbvolutional layers(similar to the
+#VGG architecture.The last layer includes am average pooling layer then the pre-trained-weights are downloaded since it is impossible 
+#to train the model using a single GPU also due to the huge size of the datasets and the depth of the model.
 
 def Inception_Inflated3d(include_top=True, weights=None, input_tensor=None, input_shape=None, logits=True, classes=400):
     
@@ -74,6 +90,8 @@ def Inception_Inflated3d(include_top=True, weights=None, input_tensor=None, inpu
     X = conv3d_bn(X, 64, 1, 1, 1, strides=(1, 1, 1), padding='same')
     X = conv3d_bn(X, 192, 3, 3, 3, strides=(1, 1, 1), padding='same')
     X = MaxPooling3D((1, 3, 3), strides=(1, 2, 2), padding='same')(X)
+
+#Each block comprising of the inb0,inb1,inb2,inb3 defines an Inception-V1 module.
 
     inb0 = conv3d_bn(X, 64, 1, 1, 1, padding='same')
     inb1 = conv3d_bn(X, 96, 1, 1, 1, padding='same')
@@ -174,6 +192,7 @@ def Inception_Inflated3d(include_top=True, weights=None, input_tensor=None, inpu
     if not logits:
         X = Activation('softmax', name='prediction')(X)
 
+#creating the model architecture.
     model = Model(inpt, X)
 
     if weights in WEIGHTS_NAME:
@@ -206,6 +225,7 @@ def Inception_Inflated3d(include_top=True, weights=None, input_tensor=None, inpu
                 weights_url = WEIGHTS_PATH_NO_TOP['flow_imagenet_and_kinetics']
                 model_name = 'i3d_inception_flow_imagenet_and_kinetics_no_top.h5'
 
+#Downloading the weights file and loading the model pretrained-weights
         downloaded_weights_path = get_file(model_name, weights_url, cache_subdir='models')
         model.load_weights(downloaded_weights_path)
 
