@@ -1,4 +1,4 @@
-# Action Classification Using Inflated-Inception Model.
+# Action Classification Using Inflated-Inception-3D Model.
 
 ### Libraries to be installed via pip3:
 ```py
