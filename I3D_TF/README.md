@@ -40,7 +40,7 @@ $ python3 evaluate.py --type optical_flow --pretrain bothsets
 ```py
 * for both RGB AND OPTICAL_FLOW on kinetics only:
 $ python3 evaluate.py --type both --pretrain kinetics
-* for both RGB AND  OPTICAL_FLOW on kinetics and imagenet:
+* for both RGB AND OPTICAL_FLOW on kinetics and imagenet:
 $ python3 evaluate.py --type both --pretrain bothsets
 ```
 ## References:
@@ -50,14 +50,15 @@ $ python3 evaluate.py --type both --pretrain bothsets
 ## Contributed by: 
 * [Rajarshi Dutta](https://github.com/Rajarshi1001)
 
-## Model Summary:
+<u><h2>Model Summary:</h2></u>
 
-### Introduction:
+<u><h3>Introduction:</h3></u>
+
 This architecture is basically an extension of the state-of-the art image classifier Inception-V3 model by expanding the convolutional layers ,maxpooling layers from 2D to 3D in order by addition of a temporal dimension in order to learn spacio-temporal features.The model also adopts a 2-stream configuration, that is 3D convnets can directly learn spacio-temporal features from a RGB Stream but their performance can br increased by the addition of an Optical Stream. Due to the highdimensionality of their parameterization and the lack of labeled video data, previous 3D ConvNets have been relatively shallow (up to 8 layers). Here we make the observation that very deep image classification networks, suchas Inception, VGG-16 and ResNet can be trivially inflated into spatio-temporal feature extractors, and that their pre-trained weights provide a valuable initialization. We also find that a two-stream configuration is still useful.Many of these models (all but C3D) have an Imagenet pre-trained model as a subcomponent.
 
-### Model Architecture:
+<u><h3>Model Architecture:</h3></u>
 
-A number of very successful image classificationarchitectures have been developed over the years, in part through painstaking trial and error.
+A number of very successful image classification architectures have been developed over the years, in part through painstaking trial and error.
 Instead of repeating the process for spatio-temporal models
 we propose to simply convert successful image (2D) classification models into 3D ConvNets. This can be done by
 starting with a 2D architecture, and inflating all the filters
@@ -71,18 +72,30 @@ make them cubic – N × N filters become N × N × N.
 
 > I3D network trained on RGB inputs, and another on flow inputs which carry optimized, smooth flow information. We trained the two networks separately and averaged their predictions at test time.
 
+<br>
 
 ![alt_text](assets/i3d.png)
 
-### Output of the Model using weights pretrained on both kinetics and imagenet datasets:
+### Results on Famous Datasets:
 
 ![alt_text](assets/results.png)
 
 ### Results:
+The data used is already pre-processed for the model to fit on it.I t has 79 frames and a dimension of 224x224 pixels.
+
+* OPTICAL_FLOW
+
+![alt_text](assets/v_CricketShot_g04_c01_flow.gif)
+
+* RGB
+
+![alt_text](assets/v_CricketShot_g04_c01_rgb.gif)
+
+### Output of the I3D Model:
 
 ![alt_text](assets/output.png)
 
-### Implementation
+## Implementation:
 
 * The model couldn't be trained because of the huge size of the datasets and lack of resources so I have use the weights of the model pre-trained on the kinetics and the imagenet datasets.
 
