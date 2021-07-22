@@ -40,7 +40,7 @@ $ python3 evaluate.py --type optical_flow --pretrain bothsets
 ```py
 * for both RGB AND OPTICAL_FLOW on kinetics only:
 $ python3 evaluate.py --type both --pretrain kinetics
-* for both RGB AND  OPTICAL_FLOW on kinetics and imagenet:
+* for both RGB AND OPTICAL_FLOW on kinetics and imagenet:
 $ python3 evaluate.py --type both --pretrain bothsets
 ```
 ## References:
@@ -57,7 +57,7 @@ This architecture is basically an extension of the state-of-the art image classi
 
 ### Model Architecture:
 
-A number of very successful image classificationarchitectures have been developed over the years, in part through painstaking trial and error.
+A number of very successful image classification architectures have been developed over the years, in part through painstaking trial and error.
 Instead of repeating the process for spatio-temporal models
 we propose to simply convert successful image (2D) classification models into 3D ConvNets. This can be done by
 starting with a 2D architecture, and inflating all the filters
@@ -82,7 +82,7 @@ make them cubic – N × N filters become N × N × N.
 
 ![alt_text](assets/output.png)
 
-### Implementation
+### Implementation:
 
 * The model couldn't be trained because of the huge size of the datasets and lack of resources so I have use the weights of the model pre-trained on the kinetics and the imagenet datasets.
 
