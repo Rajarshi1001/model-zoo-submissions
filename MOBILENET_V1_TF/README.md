@@ -19,7 +19,7 @@
 
 ## Contributed by:
 
-* Rajarshi1001
+* [Rajarshi1001](https://github.com/Rajarshi1001)
 
 # Model Summary:
 
