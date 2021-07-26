@@ -1,3 +1,4 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/Rajarshi1001/model-zoo-submissions?style=flat-square)
 # Action Classification Using Inflated-Inception Model.
 
 ### Libraries to be installed via pip3:
