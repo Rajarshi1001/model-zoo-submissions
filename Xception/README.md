@@ -73,10 +73,10 @@ first operation. In Inception, both operations are followed by a ReLU non-linear
 
 ## Implementation:
 
-* Implemented the XCeption Mode on CIFAR10 dataset which consists of 50,000 training images and 10,000 test images.
+* Implemented the Xception Model on CIFAR10 dataset which consists of 50,000 training images and 10,000 test images.
 * Initially started the training process for 10 epochs using model.fit() method and obtained a training accuracy of 87%
 * Obtained an accuracy of 81% on the test data.
 
-             --------------x---------------
+                                                          --------------x---------------
 
 
