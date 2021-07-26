@@ -1,3 +1,5 @@
+
+![GitHub repo size](https://img.shields.io/github/repo-size/Rajarshi1001/model-zoo-submissions?style=flat-square)
 # Xception Implementation in Tensorflow for Image Classification
 
 ## Libraries to be installed via pip 
