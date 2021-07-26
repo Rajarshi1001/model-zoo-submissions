@@ -29,7 +29,7 @@ $ pip3 install *
 
 * __Title__: Xception:Deep Learning with Depthwise Separable Convolutions.
 * __Author__: François Chollet.
-* __Paper_Link__:[Xception Paper](https://arxiv.org/pdf/1610.02357.pdf)
+* __Paper_Link__: [Xception Paper](https://arxiv.org/pdf/1610.02357.pdf)
 * __Year__:2016
 
 
