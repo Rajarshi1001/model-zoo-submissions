@@ -1,3 +1,4 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/Rajarshi1001/model-zoo-submissions?style=flat-square)
 # MobileNet_V1 implementation in Tensorflow for Image Classification
 
 ## Train:
