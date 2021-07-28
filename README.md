@@ -7,3 +7,5 @@ The models implemented are:-
 * __MobileNet_V1__.
 * __Xception__('Extreme' version of Inception model).
 
+All the models are Implemented in Tensorflow.
+
