@@ -1,7 +1,5 @@
 
 
-https://user-images.githubusercontent.com/79023293/129264561-35df849b-b2e7-4872-a1e3-b3359be59835.mp4
-
 ![GitHub repo size](https://img.shields.io/github/repo-size/Rajarshi1001/model-zoo-submissions?style=flat-square)
 
 # model-zoo-submissions
@@ -22,6 +20,7 @@ References for the models:
 
 ### A sample demonstration of the MobileNet_V1 model on fruits 360 dataset
 
+https://user-images.githubusercontent.com/79023293/129264561-35df849b-b2e7-4872-a1e3-b3359be59835.mp
 <video height="400px" width="600px" controls loop src="prediction.mp4"></video>
 
 Thanks :)
