@@ -16,4 +16,8 @@ References for the models:
 * [Xception](https://arxiv.org/pdf/1610.02357.pdf)
 * [I3D](https://arxiv.org/pdf/1705.07750.pdf)
 
-:) 
+### A sample demonstration of the MobileNet_V1 model on fruits 360 dataset
+
+<video height="400px" width="600px" controls loop src="prediction.mp4"></video>
+
+Thanks :)
