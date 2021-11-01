@@ -2,14 +2,14 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/Rajarshi1001/model-zoo-submissions?style=flat-square)
 
 # model-zoo-submissions
-This repository contains the models created during the `Model Zoo` Project.
+This repository contains the models created during the __Model Zoo__ Project.
 The models implemented are:-
 * __ResNet-34__ (Residual Neural Networks).
 * __I3D__ (Inflated Inception-3D).
 * __MobileNet_V1__ (Lightweight Neural Networks for mobile Applications).
 * __Xception__ ('Extreme' version of Inception model).
 
-All the models are Implemented in `tensorflow` using `keras`.
+All the models are Implemented in `tensorflow` using `keras` API.
 
 References for the models:
 * [ResNet-34](https://arxiv.org/pdf/1512.03385.pdf)
@@ -17,7 +17,7 @@ References for the models:
 * [Xception](https://arxiv.org/pdf/1610.02357.pdf)
 * [I3D](https://arxiv.org/pdf/1705.07750.pdf)
 
-### A sample demonstration of the `MobileNet_V1 model` on fruits 360 dataset
+### A sample demonstration of the __MobileNet_V1 model__ on fruits 360 dataset
 
 
 
