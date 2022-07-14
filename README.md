@@ -20,9 +20,7 @@ References for the models:
 ### A sample demonstration of the __MobileNet_V1 model__ on fruits 360 dataset
 
 
-
 https://user-images.githubusercontent.com/79023293/129265133-48cec69d-83dd-48d4-b59b-5f91985bfa68.mp4
-
 
 
 Thanks :) 🖖
